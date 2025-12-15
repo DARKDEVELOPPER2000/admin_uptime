@@ -1,0 +1,106 @@
+<!-- pages/map.html -->
+<section class="page map-page">
+  <!-- Header -->
+  <div class="card map-hero">
+    <div class="map-hero-left">
+      <div class="map-title-row">
+        <div class="map-badge">🗺️ Map</div>
+        <h2 class="map-title">Map overview</h2>
+      </div>
+      <div class="muted">Garagistes actifs en temps réel (Google Maps).</div>
+
+      <div class="map-filters">
+        <div class="chip"><span class="dot-live"></span> LIVE</div>
+        <div class="chip">🧭 Zone: <b id="map-zone">Ouaga</b></div>
+        <div class="chip">🟢 Actifs: <b id="map-active-count">0</b></div>
+        <div class="chip soft">⏱ Dernière maj: <b id="map-last-sync">—</b></div>
+      </div>
+    </div>
+
+    <div class="map-hero-right">
+      <button class="btn primary" id="btn-refresh-map" type="button">↻ Rafraîchir</button>
+      <button class="btn" id="btn-open-job-follow" type="button">📍 Suivre job</button>
+    </div>
+  </div>
+
+  <div style="height:12px"></div>
+
+  <!-- Debug -->
+  <div class="map-debug" id="map-debug" style="display:none"></div>
+
+  <!-- Map card -->
+  <div class="card map-card">
+    <div class="map-card-head">
+      <div class="map-card-title">
+        <b>Live tracking</b>
+        <span class="muted">Points & statut en temps réel</span>
+      </div>
+
+      <div class="map-card-actions">
+        <button class="btn ghost btn-mini" id="btn-fit-bounds" type="button">🧲 Tout voir</button>
+        <button class="btn ghost btn-mini" id="btn-clear-focus" type="button">✕ Reset</button>
+      </div>
+    </div>
+
+    <div class="map-shell">
+      <div id="gmap"></div>
+
+      <!-- Floating overlay -->
+      <div class="map-float">
+        <div class="float-row">
+          <div class="float-pill">
+            <span class="pulse"></span>
+            <b id="map-live-label">LIVE</b>
+          </div>
+          <div class="float-pill soft">📡 Tracking</div>
+        </div>
+
+        <div class="float-row">
+          <div class="float-pill soft">🎯 Sélection: <b id="map-focus-name">—</b></div>
+        </div>
+
+        <div class="float-legend">
+          <div class="legend-item"><span class="legend-dot ok"></span> Actif</div>
+          <div class="legend-item"><span class="legend-dot warn"></span> Occupé</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div style="height:12px"></div>
+
+  <!-- List card -->
+  <div class="card">
+    <div class="list-head">
+      <div>
+        <h3 style="margin:0">Garagistes</h3>
+        <div class="muted">Clique “Voir” pour focus la carte.</div>
+      </div>
+
+      <div class="list-tools">
+        <div class="search mini-search">
+          🔎 <input id="sp-search" placeholder="Rechercher un garage..." />
+        </div>
+      </div>
+    </div>
+
+    <div class="table-wrap">
+      <table class="table modern-table">
+        <thead>
+          <tr>
+            <th>Garage</th>
+            <th>Statut</th>
+            <th>Zone</th>
+            <th style="width:120px">Action</th>
+          </tr>
+        </thead>
+        <tbody id="sp-list"></tbody>
+      </table>
+    </div>
+  </div>
+</section>
+
+<script type="module">
+  import { bootMapPage } from '../js/map.page.js';
+  bootMapPage();
+</script>

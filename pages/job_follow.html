@@ -1,0 +1,207 @@
+<!-- pages/job_follow.html -->
+<section class="page job-follow2">
+
+  <!-- HERO (simple) -->
+  <div class="card jf-hero">
+    <div class="jf-left">
+      <div class="jf-top">
+        <span class="jf-live"><span class="dot-live"></span> LIVE</span>
+        <span class="jf-sep">•</span>
+        <span class="muted">Job tracking</span>
+      </div>
+
+      <h2 class="jf-title">Job en cours</h2>
+      <p class="jf-sub muted">Suivi du process dès qu’une commande est validée (mock).</p>
+
+      <div class="jf-meta">
+        <div class="jf-meta-item">
+          <span class="muted">Service</span>
+          <b>Tow Service</b>
+        </div>
+        <div class="jf-meta-item">
+          <span class="muted">Client</span>
+          <b>Entreprise Ouoba Fleet</b>
+        </div>
+        <div class="jf-meta-item">
+          <span class="muted">Code</span>
+          <b>JOB-20391</b>
+        </div>
+        <div class="jf-meta-item">
+          <span class="muted">ETA</span>
+          <b>7 min</b>
+        </div>
+      </div>
+    </div>
+
+    <div class="jf-right">
+      <div class="jf-status">
+        <div class="jf-status-row">
+          <div>
+            <div class="muted" style="font-weight:1000">Statut</div>
+            <div class="jf-status-pill">En cours</div>
+          </div>
+          <div class="jf-mini">
+            <div class="muted">Dernière maj</div>
+            <b id="jf-last">—</b>
+          </div>
+        </div>
+
+        <div class="jf-kv">
+          <div class="jf-kv-item">
+            <span class="muted">SP</span>
+            <b>Garage Faso Pro</b>
+          </div>
+          <div class="jf-kv-item">
+            <span class="muted">Zone</span>
+            <b>Ouaga Nord</b>
+          </div>
+        </div>
+
+        <div class="jf-actions">
+          <button class="btn primary" id="btn-step-advance" type="button">Avancer étape</button>
+          <button class="btn ghost" id="btn-cancel-job" type="button">Annuler</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div style="height:12px"></div>
+
+  <!-- GRID -->
+  <div class="grid cols-2 jf-grid">
+    <!-- LEFT: Steps + History -->
+    <div class="card jf-card">
+      <div class="jf-head">
+        <h3 style="margin:0">Progression</h3>
+        <span class="jf-step-badge" id="jf-step-badge">Étape 3/6</span>
+      </div>
+
+      <!-- Step list (compact) -->
+      <div class="jf-steps">
+        <div class="jf-step done">
+          <span class="jf-dot"></span>
+          <div class="jf-step-body">
+            <b>Demande validée</b>
+            <div class="muted">Job approuvé</div>
+          </div>
+        </div>
+
+        <div class="jf-step done">
+          <span class="jf-dot"></span>
+          <div class="jf-step-body">
+            <b>SP assigné</b>
+            <div class="muted">Garagiste affecté</div>
+          </div>
+        </div>
+
+        <div class="jf-step active">
+          <span class="jf-dot"></span>
+          <div class="jf-step-body">
+            <b>En route pickup</b>
+            <div class="muted">SP se déplace</div>
+          </div>
+        </div>
+
+        <div class="jf-step">
+          <span class="jf-dot"></span>
+          <div class="jf-step-body">
+            <b>Intervention</b>
+            <div class="muted">Assistance/remorquage</div>
+          </div>
+        </div>
+
+        <div class="jf-step">
+          <span class="jf-dot"></span>
+          <div class="jf-step-body">
+            <b>Drop-off</b>
+            <div class="muted">Dépose finale</div>
+          </div>
+        </div>
+
+        <div class="jf-step">
+          <span class="jf-dot"></span>
+          <div class="jf-step-body">
+            <b>Clôture</b>
+            <div class="muted">Terminé & archivé</div>
+          </div>
+        </div>
+      </div>
+
+      <div style="height:14px"></div>
+
+      <div class="jf-head">
+        <h3 style="margin:0">Historique</h3>
+        <button class="btn ghost btn-mini" type="button">Exporter</button>
+      </div>
+
+      <div class="jf-history">
+        <div class="jf-hitem">
+          <span class="jf-hdot"></span>
+          <div class="jf-hmain">
+            <b>09:12</b>
+            <div class="muted">Demande validée</div>
+          </div>
+          <span class="jf-tag">OK</span>
+        </div>
+
+        <div class="jf-hitem">
+          <span class="jf-hdot"></span>
+          <div class="jf-hmain">
+            <b>09:20</b>
+            <div class="muted">SP assigné : Garage Faso Pro</div>
+          </div>
+          <span class="jf-tag">OK</span>
+        </div>
+
+        <div class="jf-hitem live">
+          <span class="jf-hdot"></span>
+          <div class="jf-hmain">
+            <b>09:28</b>
+            <div class="muted">SP en route pickup</div>
+          </div>
+          <span class="jf-tag">LIVE</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- RIGHT: Map (simple) -->
+    <div class="card jf-card">
+      <div class="jf-head">
+        <h3 style="margin:0">Vue carte</h3>
+        <span class="jf-step-badge">SP + Client</span>
+      </div>
+
+      <div class="jf-map">
+        <div class="jf-map-top">
+          <span class="jf-pill"><span class="pulse"></span> LIVE</span>
+          <span class="jf-pill">ETA: <b>7 min</b></span>
+          <span class="jf-pill">Distance: <b>3.2 km</b></span>
+        </div>
+
+        <div class="jf-map-center" aria-hidden="true">
+          <div class="jf-map-bubble">
+            <b>Carte Job</b>
+            <div class="muted">Placeholder (mock)</div>
+          </div>
+        </div>
+
+        <div class="jf-map-actions">
+          <button class="btn ghost btn-mini" type="button">📍 Centrer</button>
+          <button class="btn ghost btn-mini" type="button">🧭 Itinéraire</button>
+          <button class="btn primary btn-mini" type="button">📞 Appeler SP</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+</section>
+
+<script type="module">
+  const el = document.getElementById('jf-last');
+  if (el){
+    const d = new Date();
+    el.textContent =
+      String(d.getHours()).padStart(2,'0') + ':' +
+      String(d.getMinutes()).padStart(2,'0');
+  }
+</script>

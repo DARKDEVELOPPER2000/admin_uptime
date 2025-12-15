@@ -1,0 +1,37 @@
+<!doctype html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>UPTIME Admin</title>
+  <link rel="stylesheet" href="css/styles.css" />
+
+  <!-- Optionnel: Iconsax via CSS (si tu veux plus tard) -->
+  <!-- <link rel="stylesheet" href="https://unpkg.com/iconsax-css/css/iconsax.css"> -->
+</head>
+<body>
+  <div class="app">
+    <!-- Sidebar -->
+    <aside class="sidebar" id="sidebar"></aside>
+
+    <!-- Main -->
+    <div class="main">
+      <!-- Navbar -->
+      <header class="navbar" id="navbar"></header>
+
+      <!-- Content -->
+      <main class="content" id="app-content">
+        <div class="page-loading">
+          <div class="spinner"></div>
+          <div>Chargement…</div>
+        </div>
+      </main>
+    </div>
+  </div>
+
+  <!-- Toast -->
+  <div class="toast-wrap" id="toast-wrap"></div>
+
+  <script type="module" src="js/app.js"></script>
+</body>
+</html>

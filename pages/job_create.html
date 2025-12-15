@@ -1,0 +1,142 @@
+<section class="page jc-page">
+  <div class="grid cols-2 jc-grid">
+
+    <!-- LEFT: CREATE -->
+    <div class="card jc-card">
+      <div class="jc-head">
+        <div class="jc-live">
+          <span class="jc-dot"></span>
+          <span>LIVE • Création job</span>
+        </div>
+
+        <div class="jc-title-row">
+          <h2 class="jc-title">Créer un job</h2>
+          <span class="pill ok">Mock</span>
+        </div>
+
+        <p class="muted jc-sub">
+          Crée une demande d’assistance. Plus tard : assignation automatique + paiement.
+        </p>
+      </div>
+
+      <div class="jc-form">
+        <div class="jc-row">
+          <div class="jc-field" style="grid-column: 1 / -1;">
+            <label>Entreprise cliente</label>
+            <input class="jc-input" id="job-customer" placeholder="ex: Ouoba Fleet" />
+          </div>
+        </div>
+
+        <div class="jc-row">
+          <div class="jc-field">
+            <label>Service</label>
+            <select class="jc-input" id="job-service">
+              <option>Tow Service</option>
+              <option>Tire Change</option>
+              <option>Battery Jump Start</option>
+              <option>Lockout Service</option>
+              <option>Fuel Delivery</option>
+              <option>Other</option>
+            </select>
+          </div>
+
+          <div class="jc-field">
+            <label>Priorité</label>
+            <select class="jc-input" id="job-priority">
+              <option value="normal">Normal</option>
+              <option value="urgent">Urgent</option>
+            </select>
+          </div>
+        </div>
+
+        <div class="jc-row">
+          <div class="jc-field" style="grid-column: 1 / -1;">
+            <label>Pickup (adresse)</label>
+            <input class="jc-input" id="job-pickup" placeholder="ex: Avenue Kwamé Nkrumah" />
+          </div>
+        </div>
+
+        <div class="jc-row">
+          <div class="jc-field" style="grid-column: 1 / -1;">
+            <label>Destination (optionnel)</label>
+            <input class="jc-input" id="job-dest" placeholder="ex: Garage du Centre" />
+          </div>
+        </div>
+
+        <div class="jc-row">
+          <div class="jc-field" style="grid-column: 1 / -1;">
+            <label>Note</label>
+            <textarea class="jc-input jc-textarea" id="job-note" placeholder="ex: véhicule bloqué, pas de démarrage…"></textarea>
+          </div>
+        </div>
+
+        <div class="jc-actions">
+          <button class="btn primary" id="btn-create-job">Créer job</button>
+          <button class="btn ghost" id="btn-clear-job">Effacer</button>
+        </div>
+
+        <div class="jc-foot">
+          <span class="jc-chip"><span class="jc-chip-dot"></span> SLA estimée : 15–25 min (mock)</span>
+          <span class="jc-chip">Assignation auto : bientôt</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- RIGHT: PREVIEW -->
+    <div class="card jc-card">
+      <div class="jc-head">
+        <div class="jc-title-row" style="margin-top:0;">
+          <h3 style="margin:0;">Prévisualisation</h3>
+          <span class="pill soft">Live</span>
+        </div>
+        <div class="muted">Résumé instantané (mock).</div>
+      </div>
+
+      <div class="jc-preview card">
+        <div class="jc-prev-top">
+          <div class="jc-prev-title">
+            <b id="pv-service">Tow Service</b>
+            <span class="muted" id="pv-customer">Client: —</span>
+          </div>
+          <span class="jc-status" id="pv-badge">En attente</span>
+        </div>
+
+        <div class="jc-prev-grid">
+          <div class="jc-kv">
+            <span>Pickup</span>
+            <b id="pv-pickup">—</b>
+          </div>
+          <div class="jc-kv">
+            <span>Destination</span>
+            <b id="pv-dest">—</b>
+          </div>
+          <div class="jc-kv">
+            <span>Priorité</span>
+            <b id="pv-priority">Normal</b>
+          </div>
+          <div class="jc-kv">
+            <span>Code</span>
+            <b id="pv-code">JOB-—</b>
+          </div>
+        </div>
+
+        <div class="jc-note-line">
+          <span class="muted">Note</span>
+          <div class="jc-note-box" id="pv-note">—</div>
+        </div>
+      </div>
+
+      <div style="height:12px"></div>
+
+      <div class="jc-tip">
+        <div class="jc-tip-ico">💡</div>
+        <div class="jc-tip-txt">
+          <b>Astuce</b>
+          <div class="muted">Après création, tu peux suivre le job dans “Job en cours”.</div>
+        </div>
+        <button class="btn ghost btn-mini" data-go="#/job-follow">Ouvrir</button>
+      </div>
+    </div>
+
+  </div>
+</section>
