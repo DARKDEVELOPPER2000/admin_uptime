@@ -9,7 +9,7 @@ import {
   getGarages,
 } from './map.js';
 
-const GOOGLE_MAPS_WEB_KEY = 'AIzaSyCToq4n4k89n2c_uN20nIyJbqR86ePRUtU';
+const GOOGLE_MAPS_WEB_KEY = '';
 
 function log(...a) { console.log('[MAP_PAGE]', ...a); }
 function warn(...a) { console.warn('[MAP_PAGE]', ...a); }
