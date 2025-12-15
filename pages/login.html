@@ -1,33 +1,98 @@
-<section class="page">
-  <div class="grid cols-2">
-    <div class="card">
-      <h3>Connexion Admin</h3>
-      <div class="muted">Mock login (tu brancheras ton backend après).</div>
+<section class="page lg-page">
+  <div class="grid cols-2 lg-grid">
 
-      <div style="height:12px"></div>
+    <!-- LEFT: LOGIN -->
+    <div class="card lg-card">
+      <div class="lg-head">
+        <div class="lg-live">
+          <span class="lg-dot"></span>
+          <span>LIVE • Admin</span>
+        </div>
 
-      <div class="form">
-        <div class="field">
+        <div class="lg-title-row">
+          <h2 class="lg-title">Connexion Admin</h2>
+          <span class="pill soft">Mock</span>
+        </div>
+
+        <p class="muted lg-sub">Mock login (tu brancheras ton backend après).</p>
+      </div>
+
+      <div class="lg-form">
+        <div class="lg-field">
           <label>Email</label>
-          <input id="lg-email" placeholder="admin@uptime…" />
+          <input class="lg-input" id="lg-email" placeholder="admin@uptime…" />
         </div>
-        <div class="field">
+
+        <div class="lg-field">
           <label>Mot de passe</label>
-          <input id="lg-pass" type="password" placeholder="••••••••" />
+          <div class="lg-pass">
+            <input class="lg-input" id="lg-pass" type="password" placeholder="••••••••" />
+            <button class="lg-eye" id="lg-toggle" type="button" title="Afficher/Masquer">👁️</button>
+          </div>
         </div>
-        <button class="btn primary" id="btn-login">Se connecter</button>
+
+        <div class="lg-row">
+          <label class="lg-check">
+            <input type="checkbox" id="lg-remember" />
+            <span>Rester connecté</span>
+          </label>
+          <button class="lg-link" type="button">Mot de passe oublié</button>
+        </div>
+
+        <div class="lg-actions">
+          <button class="btn primary" id="btn-login">Se connecter</button>
+          <button class="btn ghost" id="btn-demo">Remplir demo</button>
+        </div>
+
+        <div class="lg-foot">
+          <span class="lg-chip"><span class="lg-chip-dot"></span> Sécurité : JWT (bientôt)</span>
+          <span class="lg-chip">Accès : Admin</span>
+        </div>
       </div>
     </div>
 
-    <div class="card">
-      <h3>UPTIME Admin</h3>
-      <div class="muted">Cartographie temps réel • Comptes • Jobs</div>
-      <div style="height:12px"></div>
-      <div class="map-box" style="height: 360px;">
-        <div style="position:absolute; inset:0; display:grid; place-items:center; color:rgba(255,255,255,.75); font-weight:950;">
-          Aperçu (placeholder)
+    <!-- RIGHT: PREVIEW -->
+    <div class="card lg-card">
+      <div class="lg-head">
+        <div class="lg-title-row" style="margin-top:0;">
+          <h3 style="margin:0;">UPTIME Admin</h3>
+          <span class="pill ok">Online</span>
+        </div>
+        <div class="muted">Cartographie temps réel • Comptes • Jobs</div>
+      </div>
+
+      <div class="lg-preview">
+        <div class="lg-preview-top">
+          <span class="lg-pill"><span class="lg-dot"></span> LIVE</span>
+          <span class="lg-pill soft">Heatmap</span>
+          <span class="lg-pill soft">Jobs</span>
+        </div>
+
+        <div class="lg-preview-center">
+          <div class="lg-bubble">
+            <div style="font-weight:1200;">Aperçu</div>
+            <div class="muted" style="margin-top:4px;">Carte + stats (placeholder)</div>
+          </div>
+        </div>
+
+        <div class="lg-preview-bottom">
+          <button class="btn ghost btn-mini">📍 Centrer</button>
+          <button class="btn ghost btn-mini">🧭 Itinéraire</button>
+          <button class="btn primary btn-mini">📞 Support</button>
         </div>
       </div>
+
+      <div style="height:12px"></div>
+
+      <div class="lg-tip">
+        <div class="lg-tip-ico">🔐</div>
+        <div class="lg-tip-txt">
+          <b>Astuce</b>
+          <div class="muted">Connecte-toi pour accéder au dashboard admin.</div>
+        </div>
+        <span class="pill soft">v1</span>
+      </div>
     </div>
+
   </div>
 </section>
