@@ -6,24 +6,24 @@
       <div class="jc-head">
         <div class="jc-live">
           <span class="jc-dot"></span>
-          <span>LIVE • Création job</span>
+          <span>LIVE • Job creation</span>
         </div>
 
         <div class="jc-title-row">
-          <h2 class="jc-title">Créer un job</h2>
+          <h2 class="jc-title">Create a job</h2>
           <span class="pill ok">Mock</span>
         </div>
 
         <p class="muted jc-sub">
-          Crée une demande d’assistance. Plus tard : assignation automatique + paiement.
+          Create a roadside assistance request. Later: auto-assignment + payment.
         </p>
       </div>
 
       <div class="jc-form">
         <div class="jc-row">
           <div class="jc-field" style="grid-column: 1 / -1;">
-            <label>Entreprise cliente</label>
-            <input class="jc-input" id="job-customer" placeholder="ex: Ouoba Fleet" />
+            <label>Customer company</label>
+            <input class="jc-input" id="job-customer" placeholder="e.g., Ouoba Fleet" />
           </div>
         </div>
 
@@ -41,7 +41,7 @@
           </div>
 
           <div class="jc-field">
-            <label>Priorité</label>
+            <label>Priority</label>
             <select class="jc-input" id="job-priority">
               <option value="normal">Normal</option>
               <option value="urgent">Urgent</option>
@@ -51,33 +51,37 @@
 
         <div class="jc-row">
           <div class="jc-field" style="grid-column: 1 / -1;">
-            <label>Pickup (adresse)</label>
-            <input class="jc-input" id="job-pickup" placeholder="ex: Avenue Kwamé Nkrumah" />
+            <label>Pickup (address)</label>
+            <input class="jc-input" id="job-pickup" placeholder="e.g., Avenue Kwamé Nkrumah" />
           </div>
         </div>
 
         <div class="jc-row">
           <div class="jc-field" style="grid-column: 1 / -1;">
-            <label>Destination (optionnel)</label>
-            <input class="jc-input" id="job-dest" placeholder="ex: Garage du Centre" />
+            <label>Destination (optional)</label>
+            <input class="jc-input" id="job-dest" placeholder="e.g., Downtown Garage" />
           </div>
         </div>
 
         <div class="jc-row">
           <div class="jc-field" style="grid-column: 1 / -1;">
             <label>Note</label>
-            <textarea class="jc-input jc-textarea" id="job-note" placeholder="ex: véhicule bloqué, pas de démarrage…"></textarea>
+            <textarea
+              class="jc-input jc-textarea"
+              id="job-note"
+              placeholder="e.g., vehicle stuck, won’t start…"
+            ></textarea>
           </div>
         </div>
 
         <div class="jc-actions">
-          <button class="btn primary" id="btn-create-job">Créer job</button>
-          <button class="btn ghost" id="btn-clear-job">Effacer</button>
+          <button class="btn primary" id="btn-create-job">Create job</button>
+          <button class="btn ghost" id="btn-clear-job">Clear</button>
         </div>
 
         <div class="jc-foot">
-          <span class="jc-chip"><span class="jc-chip-dot"></span> SLA estimée : 15–25 min (mock)</span>
-          <span class="jc-chip">Assignation auto : bientôt</span>
+          <span class="jc-chip"><span class="jc-chip-dot"></span> Estimated SLA: 15–25 min (mock)</span>
+          <span class="jc-chip">Auto-assignment: coming soon</span>
         </div>
       </div>
     </div>
@@ -86,19 +90,19 @@
     <div class="card jc-card">
       <div class="jc-head">
         <div class="jc-title-row" style="margin-top:0;">
-          <h3 style="margin:0;">Prévisualisation</h3>
+          <h3 style="margin:0;">Preview</h3>
           <span class="pill soft">Live</span>
         </div>
-        <div class="muted">Résumé instantané (mock).</div>
+        <div class="muted">Instant summary (mock).</div>
       </div>
 
       <div class="jc-preview card">
         <div class="jc-prev-top">
           <div class="jc-prev-title">
             <b id="pv-service">Tow Service</b>
-            <span class="muted" id="pv-customer">Client: —</span>
+            <span class="muted" id="pv-customer">Customer: —</span>
           </div>
-          <span class="jc-status" id="pv-badge">En attente</span>
+          <span class="jc-status" id="pv-badge">Pending</span>
         </div>
 
         <div class="jc-prev-grid">
@@ -111,7 +115,7 @@
             <b id="pv-dest">—</b>
           </div>
           <div class="jc-kv">
-            <span>Priorité</span>
+            <span>Priority</span>
             <b id="pv-priority">Normal</b>
           </div>
           <div class="jc-kv">
@@ -131,10 +135,10 @@
       <div class="jc-tip">
         <div class="jc-tip-ico">💡</div>
         <div class="jc-tip-txt">
-          <b>Astuce</b>
-          <div class="muted">Après création, tu peux suivre le job dans “Job en cours”.</div>
+          <b>Tip</b>
+          <div class="muted">After creating it, you can track the job in “Jobs in progress”.</div>
         </div>
-        <button class="btn ghost btn-mini" data-go="#/job-follow">Ouvrir</button>
+        <button class="btn ghost btn-mini" data-go="#/job-follow">Open</button>
       </div>
     </div>
 

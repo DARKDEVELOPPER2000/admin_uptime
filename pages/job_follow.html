@@ -10,8 +10,8 @@
         <span class="muted">Job tracking</span>
       </div>
 
-      <h2 class="jf-title">Job en cours</h2>
-      <p class="jf-sub muted">Suivi du process dès qu’une commande est validée (mock).</p>
+      <h2 class="jf-title">Job in progress</h2>
+      <p class="jf-sub muted">Track the process as soon as an order is confirmed (mock).</p>
 
       <div class="jf-meta">
         <div class="jf-meta-item">
@@ -19,8 +19,8 @@
           <b>Tow Service</b>
         </div>
         <div class="jf-meta-item">
-          <span class="muted">Client</span>
-          <b>Entreprise Ouoba Fleet</b>
+          <span class="muted">Customer</span>
+          <b>Ouoba Fleet (Company)</b>
         </div>
         <div class="jf-meta-item">
           <span class="muted">Code</span>
@@ -37,11 +37,11 @@
       <div class="jf-status">
         <div class="jf-status-row">
           <div>
-            <div class="muted" style="font-weight:1000">Statut</div>
-            <div class="jf-status-pill">En cours</div>
+            <div class="muted" style="font-weight:1000">Status</div>
+            <div class="jf-status-pill">In progress</div>
           </div>
           <div class="jf-mini">
-            <div class="muted">Dernière maj</div>
+            <div class="muted">Last update</div>
             <b id="jf-last">—</b>
           </div>
         </div>
@@ -49,17 +49,17 @@
         <div class="jf-kv">
           <div class="jf-kv-item">
             <span class="muted">SP</span>
-            <b>Garage Faso Pro</b>
+            <b>Faso Pro Garage</b>
           </div>
           <div class="jf-kv-item">
-            <span class="muted">Zone</span>
-            <b>Ouaga Nord</b>
+            <span class="muted">Area</span>
+            <b>Ouaga North</b>
           </div>
         </div>
 
         <div class="jf-actions">
-          <button class="btn primary" id="btn-step-advance" type="button">Avancer étape</button>
-          <button class="btn ghost" id="btn-cancel-job" type="button">Annuler</button>
+          <button class="btn primary" id="btn-step-advance" type="button">Advance step</button>
+          <button class="btn ghost" id="btn-cancel-job" type="button">Cancel</button>
         </div>
       </div>
     </div>
@@ -72,8 +72,8 @@
     <!-- LEFT: Steps + History -->
     <div class="card jf-card">
       <div class="jf-head">
-        <h3 style="margin:0">Progression</h3>
-        <span class="jf-step-badge" id="jf-step-badge">Étape 3/6</span>
+        <h3 style="margin:0">Progress</h3>
+        <span class="jf-step-badge" id="jf-step-badge">Step 3/6</span>
       </div>
 
       <!-- Step list (compact) -->
@@ -81,32 +81,32 @@
         <div class="jf-step done">
           <span class="jf-dot"></span>
           <div class="jf-step-body">
-            <b>Demande validée</b>
-            <div class="muted">Job approuvé</div>
+            <b>Request confirmed</b>
+            <div class="muted">Job approved</div>
           </div>
         </div>
 
         <div class="jf-step done">
           <span class="jf-dot"></span>
           <div class="jf-step-body">
-            <b>SP assigné</b>
-            <div class="muted">Garagiste affecté</div>
+            <b>SP assigned</b>
+            <div class="muted">Service provider assigned</div>
           </div>
         </div>
 
         <div class="jf-step active">
           <span class="jf-dot"></span>
           <div class="jf-step-body">
-            <b>En route pickup</b>
-            <div class="muted">SP se déplace</div>
+            <b>Heading to pickup</b>
+            <div class="muted">SP is on the way</div>
           </div>
         </div>
 
         <div class="jf-step">
           <span class="jf-dot"></span>
           <div class="jf-step-body">
-            <b>Intervention</b>
-            <div class="muted">Assistance/remorquage</div>
+            <b>Service</b>
+            <div class="muted">Assistance / towing</div>
           </div>
         </div>
 
@@ -114,15 +114,15 @@
           <span class="jf-dot"></span>
           <div class="jf-step-body">
             <b>Drop-off</b>
-            <div class="muted">Dépose finale</div>
+            <div class="muted">Final drop-off</div>
           </div>
         </div>
 
         <div class="jf-step">
           <span class="jf-dot"></span>
           <div class="jf-step-body">
-            <b>Clôture</b>
-            <div class="muted">Terminé & archivé</div>
+            <b>Closure</b>
+            <div class="muted">Completed & archived</div>
           </div>
         </div>
       </div>
@@ -130,8 +130,8 @@
       <div style="height:14px"></div>
 
       <div class="jf-head">
-        <h3 style="margin:0">Historique</h3>
-        <button class="btn ghost btn-mini" type="button">Exporter</button>
+        <h3 style="margin:0">History</h3>
+        <button class="btn ghost btn-mini" type="button">Export</button>
       </div>
 
       <div class="jf-history">
@@ -139,7 +139,7 @@
           <span class="jf-hdot"></span>
           <div class="jf-hmain">
             <b>09:12</b>
-            <div class="muted">Demande validée</div>
+            <div class="muted">Request confirmed</div>
           </div>
           <span class="jf-tag">OK</span>
         </div>
@@ -148,7 +148,7 @@
           <span class="jf-hdot"></span>
           <div class="jf-hmain">
             <b>09:20</b>
-            <div class="muted">SP assigné : Garage Faso Pro</div>
+            <div class="muted">SP assigned: Faso Pro Garage</div>
           </div>
           <span class="jf-tag">OK</span>
         </div>
@@ -157,7 +157,7 @@
           <span class="jf-hdot"></span>
           <div class="jf-hmain">
             <b>09:28</b>
-            <div class="muted">SP en route pickup</div>
+            <div class="muted">SP heading to pickup</div>
           </div>
           <span class="jf-tag">LIVE</span>
         </div>
@@ -167,8 +167,8 @@
     <!-- RIGHT: Map (simple) -->
     <div class="card jf-card">
       <div class="jf-head">
-        <h3 style="margin:0">Vue carte</h3>
-        <span class="jf-step-badge">SP + Client</span>
+        <h3 style="margin:0">Map view</h3>
+        <span class="jf-step-badge">SP + Customer</span>
       </div>
 
       <div class="jf-map">
@@ -180,15 +180,15 @@
 
         <div class="jf-map-center" aria-hidden="true">
           <div class="jf-map-bubble">
-            <b>Carte Job</b>
+            <b>Job map</b>
             <div class="muted">Placeholder (mock)</div>
           </div>
         </div>
 
         <div class="jf-map-actions">
-          <button class="btn ghost btn-mini" type="button">📍 Centrer</button>
-          <button class="btn ghost btn-mini" type="button">🧭 Itinéraire</button>
-          <button class="btn primary btn-mini" type="button">📞 Appeler SP</button>
+          <button class="btn ghost btn-mini" type="button">📍 Center</button>
+          <button class="btn ghost btn-mini" type="button">🧭 Directions</button>
+          <button class="btn primary btn-mini" type="button">📞 Call SP</button>
         </div>
       </div>
     </div>

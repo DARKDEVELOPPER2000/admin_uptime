@@ -7,19 +7,19 @@
         <div class="map-badge">🗺️ Map</div>
         <h2 class="map-title">Map overview</h2>
       </div>
-      <div class="muted">Garagistes actifs en temps réel (Google Maps).</div>
+      <div class="muted">Active garages in real time (Google Maps).</div>
 
       <div class="map-filters">
         <div class="chip"><span class="dot-live"></span> LIVE</div>
         <div class="chip">🧭 Zone: <b id="map-zone">Ouaga</b></div>
-        <div class="chip">🟢 Actifs: <b id="map-active-count">0</b></div>
-        <div class="chip soft">⏱ Dernière maj: <b id="map-last-sync">—</b></div>
+        <div class="chip">🟢 Active: <b id="map-active-count">0</b></div>
+        <div class="chip soft">⏱ Last update: <b id="map-last-sync">—</b></div>
       </div>
     </div>
 
     <div class="map-hero-right">
-      <button class="btn primary" id="btn-refresh-map" type="button">↻ Rafraîchir</button>
-      <button class="btn" id="btn-open-job-follow" type="button">📍 Suivre job</button>
+      <button class="btn primary" id="btn-refresh-map" type="button">↻ Refresh</button>
+      <button class="btn" id="btn-open-job-follow" type="button">📍 Track job</button>
     </div>
   </div>
 
@@ -33,11 +33,11 @@
     <div class="map-card-head">
       <div class="map-card-title">
         <b>Live tracking</b>
-        <span class="muted">Points & statut en temps réel</span>
+        <span class="muted">Real-time points & status</span>
       </div>
 
       <div class="map-card-actions">
-        <button class="btn ghost btn-mini" id="btn-fit-bounds" type="button">🧲 Tout voir</button>
+        <button class="btn ghost btn-mini" id="btn-fit-bounds" type="button">🧲 View all</button>
         <button class="btn ghost btn-mini" id="btn-clear-focus" type="button">✕ Reset</button>
       </div>
     </div>
@@ -56,12 +56,12 @@
         </div>
 
         <div class="float-row">
-          <div class="float-pill soft">🎯 Sélection: <b id="map-focus-name">—</b></div>
+          <div class="float-pill soft">🎯 Selected: <b id="map-focus-name">—</b></div>
         </div>
 
         <div class="float-legend">
-          <div class="legend-item"><span class="legend-dot ok"></span> Actif</div>
-          <div class="legend-item"><span class="legend-dot warn"></span> Occupé</div>
+          <div class="legend-item"><span class="legend-dot ok"></span> Active</div>
+          <div class="legend-item"><span class="legend-dot warn"></span> Busy</div>
         </div>
       </div>
     </div>
@@ -73,13 +73,13 @@
   <div class="card">
     <div class="list-head">
       <div>
-        <h3 style="margin:0">Garagistes</h3>
-        <div class="muted">Clique “Voir” pour focus la carte.</div>
+        <h3 style="margin:0">Garages</h3>
+        <div class="muted">Click “View” to focus the map.</div>
       </div>
 
       <div class="list-tools">
         <div class="search mini-search">
-          🔎 <input id="sp-search" placeholder="Rechercher un garage..." />
+          🔎 <input id="sp-search" placeholder="Search a garage..." />
         </div>
       </div>
     </div>
@@ -89,7 +89,7 @@
         <thead>
           <tr>
             <th>Garage</th>
-            <th>Statut</th>
+            <th>Status</th>
             <th>Zone</th>
             <th style="width:120px">Action</th>
           </tr>

@@ -6,11 +6,11 @@ const $ = (s, r = document) => r.querySelector(s);
 const routes = {
   '#/dashboard': { file: 'pages/dashboard.html', title: 'Dashboard' },
   '#/map': { file: 'pages/map.html', title: 'Map overview' },
-  '#/job-follow': { file: 'pages/job_follow.html', title: 'Job en cours' },
-  '#/accounts-create': { file: 'pages/accounts_create.html', title: 'Créer un compte' },
-  '#/job-create': { file: 'pages/job_create.html', title: 'Créer un job' },
+  '#/job-follow': { file: 'pages/job_follow.html', title: 'Job in progress' },
+  '#/accounts-create': { file: 'pages/accounts_create.html', title: 'Create an account' },
+  '#/job-create': { file: 'pages/job_create.html', title: 'Create a job' },
   '#/settings': { file: 'pages/settings.html', title: 'Settings' },
-  '#/login': { file: 'pages/login.html', title: 'Connexion' },
+  '#/login': { file: 'pages/login.html', title: 'Sign in' },
 };
 
 export function go(hash) {
@@ -43,8 +43,8 @@ async function render() {
     // bind page events (per page)
     bindPage(hash);
 
-    // ✅ IMPORTANT: dans une SPA, les <script> dans innerHTML ne s’exécutent pas.
-    // Donc on lance la page map ici.
+    // ✅ IMPORTANT: in a SPA, <script> tags inside innerHTML won't execute.
+    // So we boot the map page here.
     if (hash === '#/map') {
       const mod = await import('./map.page.js');
       await mod.bootMapPage();
@@ -52,6 +52,6 @@ async function render() {
 
   } catch (e) {
     console.error(e);
-    toast('Erreur', 'Impossible de charger la page.', 'danger');
+    toast('Error', 'Unable to load the page.', 'danger');
   }
 }

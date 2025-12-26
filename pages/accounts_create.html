@@ -6,66 +6,66 @@
       <div class="acc-head">
         <div class="acc-live">
           <span class="acc-dot"></span>
-          <span>LIVE • Création</span>
+          <span>LIVE • Creation</span>
         </div>
 
         <div class="acc-title-row">
-          <h2 class="acc-title">Créer un compte</h2>
+          <h2 class="acc-title">Create an account</h2>
           <span class="pill ok">Mock</span>
         </div>
 
         <p class="muted acc-sub">
-          Profil <b>Garagiste (SP)</b> ou <b>Client (Entreprise)</b>, avec génération d’un code lié.
+          Profile <b>Garage (SP)</b> or <b>Customer (Company)</b>, with generation of a linked code.
         </p>
       </div>
 
       <div class="acc-form">
         <div class="acc-row">
           <div class="acc-field">
-            <label>Type de compte</label>
+            <label>Account type</label>
             <select id="acc-type" class="acc-input">
-              <option value="sp">Garagiste / SP</option>
-              <option value="customer">Client (Entreprise)</option>
+              <option value="sp">Garage / SP</option>
+              <option value="customer">Customer (Company)</option>
             </select>
           </div>
 
           <div class="acc-field">
-            <label>Zone / Ville</label>
-            <input id="acc-zone" class="acc-input" placeholder="ex: Ouaga Nord" />
+            <label>Area / City</label>
+            <input id="acc-zone" class="acc-input" placeholder="e.g. Ouaga North" />
           </div>
         </div>
 
         <div class="acc-row">
           <div class="acc-field" style="grid-column: 1 / -1;">
-            <label>Nom (Garage ou Entreprise)</label>
-            <input id="acc-name" class="acc-input" placeholder="ex: Garage Faso Pro" />
+            <label>Name (Garage or Company)</label>
+            <input id="acc-name" class="acc-input" placeholder="e.g. Faso Pro Garage" />
           </div>
         </div>
 
         <div class="acc-row">
           <div class="acc-field">
-            <label>Téléphone</label>
-            <input id="acc-phone" class="acc-input" placeholder="ex: 70 00 00 00" />
+            <label>Phone</label>
+            <input id="acc-phone" class="acc-input" placeholder="e.g. 70 00 00 00" />
           </div>
 
           <div class="acc-field">
-            <label>Email (optionnel)</label>
-            <input id="acc-email" class="acc-input" placeholder="ex: contact@..." />
+            <label>Email (optional)</label>
+            <input id="acc-email" class="acc-input" placeholder="e.g. contact@..." />
           </div>
         </div>
 
         <div class="acc-actions">
-          <button class="btn primary" id="btn-generate-code">Générer code + créer</button>
-          <button class="btn ghost" id="btn-reset">Réinitialiser</button>
+          <button class="btn primary" id="btn-generate-code">Generate code + create</button>
+          <button class="btn ghost" id="btn-reset">Reset</button>
         </div>
 
         <div class="acc-code card" id="generated-wrap" hidden>
           <div class="acc-code-left">
-            <div class="muted" style="font-weight:1000;">Code généré</div>
+            <div class="muted" style="font-weight:1000;">Generated code</div>
             <div class="acc-code-value" id="generated-code">UP-000000</div>
-            <div class="muted">Utilisé pour la connexion mobile (client / SP).</div>
+            <div class="muted">Used for mobile login (customer / SP).</div>
           </div>
-          <button class="btn" id="btn-copy-code">Copier</button>
+          <button class="btn" id="btn-copy-code">Copy</button>
         </div>
       </div>
     </div>
@@ -74,10 +74,10 @@
     <div class="card acc-card">
       <div class="acc-head">
         <div class="acc-title-row">
-          <h3 style="margin:0;">Comptes récents</h3>
+          <h3 style="margin:0;">Recent accounts</h3>
           <span class="pill soft">Mock</span>
         </div>
-        <div class="muted">Dernières créations (exemples).</div>
+        <div class="muted">Latest creations (examples).</div>
       </div>
 
       <div class="acc-table-wrap">
@@ -85,24 +85,24 @@
           <thead>
             <tr>
               <th>Type</th>
-              <th>Nom</th>
+              <th>Name</th>
               <th>Code</th>
-              <th>Statut</th>
+              <th>Status</th>
             </tr>
           </thead>
 
           <tbody id="accounts-recent">
             <tr>
               <td><span class="acc-type">SP</span></td>
-              <td><b>Garage Faso Pro</b></td>
+              <td><b>Faso Pro Garage</b></td>
               <td><span class="acc-code-chip">SP-493812</span></td>
-              <td><span class="pill ok">Actif</span></td>
+              <td><span class="pill ok">Active</span></td>
             </tr>
             <tr>
-              <td><span class="acc-type">Client</span></td>
+              <td><span class="acc-type">Customer</span></td>
               <td><b>Ouoba Fleet</b></td>
               <td><span class="acc-code-chip">CL-120991</span></td>
-              <td><span class="pill ok">Actif</span></td>
+              <td><span class="pill ok">Active</span></td>
             </tr>
           </tbody>
         </table>
@@ -112,7 +112,7 @@
         <span class="acc-note-dot"></span>
         <div>
           <b>Tip</b>
-          <div class="muted">Plus tard : recherche, pagination, statut (Suspendu), export.</div>
+          <div class="muted">Later: search, pagination, status (Suspended), export.</div>
         </div>
       </div>
     </div>

@@ -34,8 +34,8 @@ function stampNow() {
 
 function pillClass(status) {
   const s = String(status || '').toLowerCase();
-  if (s.includes('actif')) return 'ok';
-  if (s.includes('occup')) return 'warn';
+  if (s.includes('active')) return 'ok';
+  if (s.includes('busy') || s.includes('occup')) return 'warn';
   return 'soft';
 }
 
@@ -49,7 +49,7 @@ function renderTable(list) {
       <td><span class="pill ${pillClass(g.status)}">${g.status || '—'}</span></td>
       <td>${g.zone || '—'}</td>
       <td>
-        <button class="btn ghost btn-mini" data-follow="${g.id}" type="button">Voir</button>
+        <button class="btn ghost btn-mini" data-follow="${g.id}" type="button">View</button>
       </td>
     </tr>
   `).join('');
@@ -62,7 +62,7 @@ function renderTable(list) {
         $('#map-focus-name').textContent = g.name;
         showMapDebug(`📍 Focus: ${g.name}`);
       } else {
-        showMapDebug(`⚠️ Garage introuvable (id=${id})`);
+        showMapDebug(`⚠️ Garage not found (id=${id})`);
       }
     });
   });
@@ -107,17 +107,17 @@ function installGlobalCatcher() {
 export async function bootMapPage() {
   installGlobalCatcher();
 
-  showMapDebug('Chargement de la carte...');
+  showMapDebug('Loading map...');
   $('#map-last-sync').textContent = stampNow();
 
   const gmap = document.getElementById('gmap');
   if (!gmap) {
-    err('❌ #gmap introuvable');
-    showMapDebug('Erreur: #gmap introuvable.');
+    err('❌ #gmap not found');
+    showMapDebug('Error: #gmap not found.');
     return;
   }
 
-  // ✅ Assure que le conteneur a une taille (sinon Google Maps render mal)
+  // ✅ Ensure the container has a size (otherwise Google Maps can render incorrectly)
   requestAnimationFrame(async () => {
     try {
       await ensureGoogleMapsLoaded(GOOGLE_MAPS_WEB_KEY);
@@ -127,11 +127,11 @@ export async function bootMapPage() {
         zoom: 13,
       });
 
-      // Mock list (remplace par ton API)
+      // Mock list (replace with your API)
       const list = [
-        { id: 1, name: 'Garage Faso Pro', status: 'Actif', zone: 'Ouaga Nord', pos: { lat: 12.3890, lng: -1.5090 } },
-        { id: 2, name: 'Remorquage Express', status: 'Actif', zone: 'Ouaga Est', pos: { lat: 12.3655, lng: -1.5330 } },
-        { id: 3, name: 'Garage du Centre', status: 'Occupé', zone: 'Ouaga Centre', pos: { lat: 12.3730, lng: -1.5000 } },
+        { id: 1, name: 'Garage Faso Pro', status: 'Active', zone: 'Ouaga North', pos: { lat: 12.3890, lng: -1.5090 } },
+        { id: 2, name: 'Remorquage Express', status: 'Active', zone: 'Ouaga East', pos: { lat: 12.3655, lng: -1.5330 } },
+        { id: 3, name: 'Garage du Centre', status: 'Busy', zone: 'Ouaga Central', pos: { lat: 12.3730, lng: -1.5000 } },
       ];
 
       const count = setGarages(list) || 0;
@@ -139,25 +139,25 @@ export async function bootMapPage() {
       renderTable(list);
       fitAll();
 
-      showMapDebug('✅ Carte chargée. Clique “Voir” pour focus.');
+      showMapDebug('✅ Map loaded. Click “View” to focus.');
 
       // Refresh
       $('#btn-refresh-map')?.addEventListener('click', () => {
         setGarages(list);
         $('#map-active-count').textContent = String(list.length);
         $('#map-last-sync').textContent = stampNow();
-        showMapDebug('✅ Rafraîchi (mock).');
+        showMapDebug('✅ Refreshed (mock).');
       });
 
       // Follow job
       $('#btn-open-job-follow')?.addEventListener('click', () => {
-        showMapDebug('📍 Suivi job (mock).');
+        showMapDebug('📍 Job tracking (mock).');
       });
 
       // Fit bounds
       $('#btn-fit-bounds')?.addEventListener('click', () => {
         fitAll();
-        showMapDebug('🧲 Vue globale.');
+        showMapDebug('🧲 Full view.');
       });
 
       // Clear focus
@@ -165,7 +165,7 @@ export async function bootMapPage() {
         clearFocus();
         $('#map-focus-name').textContent = '—';
         fitAll();
-        showMapDebug('✕ Reset sélection.');
+        showMapDebug('✕ Selection reset.');
       });
 
       // Search
@@ -177,8 +177,8 @@ export async function bootMapPage() {
     } catch (e) {
       err('❌ bootMapPage failed:', e);
       showMapDebug(
-        '❌ Impossible de charger Google Maps.\n' +
-        'Vérifie: clé WEB (Maps JavaScript API), billing activé, restrictions HTTP referrer.'
+        '❌ Unable to load Google Maps.\n' +
+        'Check: WEB key (Maps JavaScript API), billing enabled, HTTP referrer restrictions.'
       );
     }
   });

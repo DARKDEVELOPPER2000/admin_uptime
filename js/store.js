@@ -1,9 +1,9 @@
 import { toast } from './utils.js';
 import { go } from './router.js';
 
-const $ = (s, r=document) => r.querySelector(s);
+const $ = (s, r = document) => r.querySelector(s);
 
-export function bindPage(hash){
+export function bindPage(hash) {
   if (hash === '#/dashboard') bindDashboard();
   if (hash === '#/map') bindMap();
   if (hash === '#/job-follow') bindJobFollow();
@@ -18,14 +18,14 @@ export function bindPage(hash){
   });
 }
 
-function bindDashboard(){
+function bindDashboard() {
   // mock refresh
 }
 
-function bindMap(){
+function bindMap() {
   $('#btn-refresh-map')?.addEventListener('click', () => {
-    toast('Map', 'Rafraîchi (mock).', 'ok');
-    const n = 10 + Math.floor(Math.random()*10);
+    toast('Map', 'Refreshed (mock).', 'ok');
+    const n = 10 + Math.floor(Math.random() * 10);
     const el = $('#map-active-count');
     if (el) el.textContent = String(n);
   });
@@ -34,49 +34,52 @@ function bindMap(){
 
   document.querySelectorAll('[data-follow]').forEach(btn => {
     btn.addEventListener('click', () => {
-      toast('Garagiste', 'Ouverture détail (mock).', 'ok');
+      toast('Garage', 'Opening details (mock).', 'ok');
       go('#/job-follow');
     });
   });
 }
 
-function bindJobFollow(){
+function bindJobFollow() {
   $('#btn-step-advance')?.addEventListener('click', () => {
-    toast('Job', 'Étape avancée (mock).', 'ok');
+    toast('Job', 'Step advanced (mock).', 'ok');
   });
 
   $('#btn-cancel-job')?.addEventListener('click', () => {
-    toast('Job', 'Job annulé (mock).', 'danger');
+    toast('Job', 'Job cancelled (mock).', 'danger');
   });
 }
 
-function bindAccountsCreate(){
+function bindAccountsCreate() {
   $('#btn-generate-code')?.addEventListener('click', () => {
     const type = $('#acc-type')?.value || 'sp';
     const code = generateCode(type === 'sp' ? 'SP' : 'CL');
     const wrap = $('#generated-wrap');
     const out = $('#generated-code');
-    if (wrap && out){
+
+    if (wrap && out) {
       out.textContent = code;
       wrap.hidden = false;
     }
-    toast('Compte', `Compte créé + code: ${code} (mock)`, 'ok');
+
+    toast('Account', `Account created + code: ${code} (mock)`, 'ok');
   });
 }
 
-function bindJobCreate(){
+function bindJobCreate() {
   const pv = () => {
     const service = $('#job-service')?.value || '—';
     const customer = $('#job-customer')?.value || '—';
     const pickup = $('#job-pickup')?.value || '—';
     const dest = $('#job-dest')?.value || '—';
+
     $('#pv-service').textContent = service;
     $('#pv-customer').textContent = `Client: ${customer}`;
     $('#pv-pickup').textContent = pickup;
     $('#pv-dest').textContent = dest;
   };
 
-  ['job-service','job-customer','job-pickup','job-dest','job-note'].forEach(id => {
+  ['job-service', 'job-customer', 'job-pickup', 'job-dest', 'job-note'].forEach(id => {
     $(`#${id}`)?.addEventListener('input', pv);
     $(`#${id}`)?.addEventListener('change', pv);
   });
@@ -84,23 +87,23 @@ function bindJobCreate(){
   pv();
 
   $('#btn-create-job')?.addEventListener('click', () => {
-    toast('Job', 'Job créé (mock).', 'ok');
+    toast('Job', 'Job created (mock).', 'ok');
     go('#/job-follow');
   });
 }
 
-function bindSettings(){
+function bindSettings() {
   // nothing
 }
 
-function bindLogin(){
+function bindLogin() {
   $('#btn-login')?.addEventListener('click', () => {
-    toast('Connexion', 'Connecté (mock).', 'ok');
+    toast('Login', 'Logged in (mock).', 'ok');
     go('#/dashboard');
   });
 }
 
-function generateCode(prefix){
-  const n = Math.floor(100000 + Math.random()*900000);
+function generateCode(prefix) {
+  const n = Math.floor(100000 + Math.random() * 900000);
   return `${prefix}-${n}`;
 }

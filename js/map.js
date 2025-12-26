@@ -49,21 +49,22 @@ export function initMap({ elId, center, zoom }) {
 }
 
 function clearMarkers() {
-  _markers.forEach(m => m.setMap(null));
+  _markers.forEach((m) => m.setMap(null));
   _markers = [];
 }
 
 function statusClass(status) {
   const s = String(status || '').toLowerCase();
-  if (s.includes('actif')) return 'ok';
-  if (s.includes('occup')) return 'warn';
+  if (s.includes('active')) return 'ok';
+  if (s.includes('busy') || s.includes('occup')) return 'warn';
   return 'soft';
 }
 
 function markerColor(status) {
-  // Vert = actif, Noir = occupé (avec ton thème)
+  // Green = active, Dark = busy (fits your theme)
   const s = String(status || '').toLowerCase();
-  return s.includes('actif') ? '#00FF40' : '#0f172a';
+  if (s.includes('active')) return '#00FF40';
+  return '#0f172a';
 }
 
 export function setGarages(list) {
@@ -72,7 +73,7 @@ export function setGarages(list) {
 
   clearMarkers();
 
-  _garages.forEach(g => {
+  _garages.forEach((g) => {
     const pin = markerColor(g.status);
 
     const marker = new _google.maps.Marker({
@@ -109,7 +110,7 @@ export function setGarages(list) {
 export function focusGarage(id) {
   if (!_map) return null;
 
-  const g = _garages.find(x => String(x.id) === String(id));
+  const g = _garages.find((x) => String(x.id) === String(id));
   if (!g) return null;
 
   _focusedId = g.id;
@@ -126,7 +127,7 @@ export function fitAll() {
   if (!_map || !_google || !_garages.length) return;
 
   const bounds = new _google.maps.LatLngBounds();
-  _garages.forEach(g => bounds.extend(g.pos));
+  _garages.forEach((g) => bounds.extend(g.pos));
   _map.fitBounds(bounds, 60);
 }
 

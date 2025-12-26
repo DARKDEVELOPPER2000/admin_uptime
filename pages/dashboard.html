@@ -10,20 +10,20 @@
 
       <h2 class="dash-title">Dashboard</h2>
       <p class="dash-sub">
-        Vue synthèse : activité, SP actifs, jobs et alertes (mock).
+        Summary view: activity, active service providers, jobs, and alerts (mock).
       </p>
 
       <div class="dash-hero-actions">
-        <button class="btn primary" data-go="#/job-create">+ Créer un job</button>
-        <button class="btn ghost" data-go="#/map">Voir la carte</button>
-        <button class="btn ghost" data-go="#/job-follow">Suivre job</button>
+        <button class="btn primary" data-go="#/job-create">+ Create a job</button>
+        <button class="btn ghost" data-go="#/map">View map</button>
+        <button class="btn ghost" data-go="#/job-follow">Track job</button>
       </div>
     </div>
 
     <div class="dash-hero-right">
       <div class="hero-stat">
         <div class="hero-stat-top">
-          <span class="hero-stat-label">Disponibilité</span>
+          <span class="hero-stat-label">Availability</span>
           <span class="hero-stat-pill">Stable</span>
         </div>
 
@@ -39,7 +39,7 @@
         </div>
 
         <div class="hero-stat-foot">
-          <span class="muted">Dernières 24h</span>
+          <span class="muted">Last 24h</span>
           <span class="muted">— mock</span>
         </div>
       </div>
@@ -54,14 +54,14 @@
       <div class="kpi-head">
         <div class="kpi-ico">🧰</div>
         <div class="kpi-meta">
-          <div class="kpi-label">Garagistes actifs</div>
-          <div class="kpi-hint">Dans la zone surveillée</div>
+          <div class="kpi-label">Active garages</div>
+          <div class="kpi-hint">In the monitored area</div>
         </div>
         <div class="kpi-badge kpi-badge-live">LIVE</div>
       </div>
       <div class="kpi-value" id="kpi-sp-active">12</div>
       <div class="kpi-foot">
-        <div class="kpi-chip">+2 depuis 1h (mock)</div>
+        <div class="kpi-chip">+2 in the last hour (mock)</div>
       </div>
     </div>
 
@@ -69,14 +69,14 @@
       <div class="kpi-head">
         <div class="kpi-ico">📍</div>
         <div class="kpi-meta">
-          <div class="kpi-label">Jobs en cours</div>
-          <div class="kpi-hint">Assignés et actifs</div>
+          <div class="kpi-label">Jobs in progress</div>
+          <div class="kpi-hint">Assigned and active</div>
         </div>
-        <div class="kpi-badge">Suivi</div>
+        <div class="kpi-badge">Tracking</div>
       </div>
       <div class="kpi-value" id="kpi-jobs-live">3</div>
       <div class="kpi-foot">
-        <div class="kpi-chip">Temps moyen: 18 min (mock)</div>
+        <div class="kpi-chip">Avg time: 18 min (mock)</div>
       </div>
     </div>
 
@@ -84,14 +84,14 @@
       <div class="kpi-head">
         <div class="kpi-ico">🏢</div>
         <div class="kpi-meta">
-          <div class="kpi-label">Clients (entreprises)</div>
-          <div class="kpi-hint">Flottes enregistrées</div>
+          <div class="kpi-label">Customers (companies)</div>
+          <div class="kpi-hint">Registered fleets</div>
         </div>
         <div class="kpi-badge">Total</div>
       </div>
       <div class="kpi-value" id="kpi-customers">24</div>
       <div class="kpi-foot">
-        <div class="kpi-chip">+1 cette semaine (mock)</div>
+        <div class="kpi-chip">+1 this week (mock)</div>
       </div>
     </div>
 
@@ -99,14 +99,14 @@
       <div class="kpi-head">
         <div class="kpi-ico">⚠️</div>
         <div class="kpi-meta">
-          <div class="kpi-label">Alertes</div>
-          <div class="kpi-hint">Docs expirés / incidents</div>
+          <div class="kpi-label">Alerts</div>
+          <div class="kpi-hint">Expired docs / incidents</div>
         </div>
-        <div class="kpi-badge kpi-badge-alert">À vérifier</div>
+        <div class="kpi-badge kpi-badge-alert">Needs review</div>
       </div>
       <div class="kpi-value" id="kpi-alerts">2</div>
       <div class="kpi-foot">
-        <div class="kpi-chip">Action requise (mock)</div>
+        <div class="kpi-chip">Action required (mock)</div>
       </div>
     </div>
   </div>
@@ -118,8 +118,8 @@
     <!-- Activity -->
     <div class="card dash-panel">
       <div class="panel-head">
-        <h3>Activité récente</h3>
-        <button class="btn ghost btn-mini" data-go="#/job-follow">Voir tout</button>
+        <h3>Recent activity</h3>
+        <button class="btn ghost btn-mini" data-go="#/job-follow">View all</button>
       </div>
 
       <div class="timeline" id="recent-activity">
@@ -130,7 +130,7 @@
               <b>09:12</b>
               <span class="t-pill ok">OK</span>
             </div>
-            <div class="t-text">Nouveau job validé (mock)</div>
+            <div class="t-text">New job approved (mock)</div>
           </div>
         </div>
 
@@ -141,7 +141,7 @@
               <b>09:05</b>
               <span class="t-pill">Done</span>
             </div>
-            <div class="t-text">Compte SP créé (mock)</div>
+            <div class="t-text">Service provider account created (mock)</div>
           </div>
         </div>
 
@@ -152,7 +152,7 @@
               <b>08:48</b>
               <span class="t-pill alert">Cancel</span>
             </div>
-            <div class="t-text">Job annulé (mock)</div>
+            <div class="t-text">Job cancelled (mock)</div>
           </div>
         </div>
       </div>
@@ -161,10 +161,10 @@
     <!-- Quick Actions -->
     <div class="card dash-panel">
       <div class="panel-head">
-        <h3>Actions rapides</h3>
+        <h3>Quick actions</h3>
         <div class="panel-chip">
           <span class="panel-dot"></span>
-          <span>Prêt</span>
+          <span>Ready</span>
         </div>
       </div>
 
@@ -172,32 +172,32 @@
         <button class="quick" data-go="#/job-create">
           <div class="quick-ico">➕</div>
           <div class="quick-txt">
-            <b>Créer un job</b>
-            <span>Nouvelle demande</span>
+            <b>Create a job</b>
+            <span>New request</span>
           </div>
         </button>
 
         <button class="quick" data-go="#/accounts-create">
           <div class="quick-ico">👤</div>
           <div class="quick-txt">
-            <b>Créer un compte</b>
-            <span>Client ou SP</span>
+            <b>Create an account</b>
+            <span>Customer or provider</span>
           </div>
         </button>
 
         <button class="quick" data-go="#/map">
           <div class="quick-ico">🗺️</div>
           <div class="quick-txt">
-            <b>Voir la carte</b>
-            <span>Tracking live</span>
+            <b>View map</b>
+            <span>Live tracking</span>
           </div>
         </button>
 
         <button class="quick" data-go="#/job-follow">
           <div class="quick-ico">📍</div>
           <div class="quick-txt">
-            <b>Suivre job</b>
-            <span>Statut & progression</span>
+            <b>Track job</b>
+            <span>Status & progress</span>
           </div>
         </button>
       </div>
@@ -208,7 +208,7 @@
         <div class="note-ico">⚙️</div>
         <div class="note-txt">
           <b>Mode</b>
-          <div class="muted">Plus tard : zones, filtres, types de services, etc.</div>
+          <div class="muted">Later: zones, filters, service types, etc.</div>
         </div>
       </div>
     </div>
