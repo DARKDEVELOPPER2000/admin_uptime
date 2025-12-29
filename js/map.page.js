@@ -129,9 +129,9 @@ export async function bootMapPage() {
 
       // Mock list (replace with your API)
       const list = [
-        { id: 1, name: 'Garage Faso Pro', status: 'Active', zone: 'Ouaga North', pos: { lat: 12.3890, lng: -1.5090 } },
-        { id: 2, name: 'Remorquage Express', status: 'Active', zone: 'Ouaga East', pos: { lat: 12.3655, lng: -1.5330 } },
-        { id: 3, name: 'Garage du Centre', status: 'Busy', zone: 'Ouaga Central', pos: { lat: 12.3730, lng: -1.5000 } },
+        { id: 1, name: 'TD Automative', status: 'Active', zone: 'Ouaga North', pos: { lat: 12.3890, lng: -1.5090 } },
+        { id: 2, name: 'TD Automative', status: 'Active', zone: 'Ouaga East', pos: { lat: 12.3655, lng: -1.5330 } },
+        { id: 3, name: 'TD Automative', status: 'Busy', zone: 'Ouaga Central', pos: { lat: 12.3730, lng: -1.5000 } },
       ];
 
       const count = setGarages(list) || 0;
